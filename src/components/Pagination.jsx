@@ -4,15 +4,21 @@ import {useContext} from "react";
 import {PokemonContext} from "../context/PokemonContext.js";
 
 export const Pagination = () => {
-  const {subValue, addValue} = useContext(PokemonContext);
+  const {subValue, addValue, resetValue} = useContext(PokemonContext);
 
   return (
     <div className="d-flex justify-content-center w-100 gap-2">
       <Button
-        variant="secondary"
+        variant="primary"
         onClick={() => subValue(LIMIT)}
       >
         <i className="bi bi-arrow-left"></i> Prev
+      </Button>
+      <Button
+        variant="secondary"
+        onClick={() => resetValue(0)}
+      >
+        <i className="bi bi-house-door"></i> Inicio
       </Button>
       <Button
         variant="primary"

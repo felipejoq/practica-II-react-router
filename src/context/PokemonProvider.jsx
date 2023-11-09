@@ -10,7 +10,7 @@ export const PokemonProvider = ({children}) => {
   const [params, setParams] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const {counter, addValue, subValue} = useCounter(parseInt(searchParams.get("offset")) || OFFSET);
+  const {counter, addValue, subValue, resetValue} = useCounter(parseInt(searchParams.get("offset")) || OFFSET);
   const [pokemons, setPokemons] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -36,6 +36,7 @@ export const PokemonProvider = ({children}) => {
       params,
       setParams,
       setSearchParams,
+      resetValue,
       addValue,
       subValue
     }}>
