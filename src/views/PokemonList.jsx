@@ -3,6 +3,7 @@ import {useContext, useEffect} from "react";
 import {PokemonContext} from "../context/PokemonContext.js";
 import {Pagination} from "../components/Pagination.jsx";
 import {PokemonShow} from "../components/PokemonShow.jsx";
+import {Loader} from "../components/Loader.jsx";
 
 export const PokemonList = () => {
 
@@ -20,7 +21,7 @@ export const PokemonList = () => {
       <Row>
         {
           isLoading || !(pokemons.length > 0)
-            ? "Cargando..."
+            ? <Loader />
             : pokemons.map(pokemon => (
               pokemon.id && <Col key={crypto.randomUUID()}>
                 <PokemonShow pokemon={pokemon}/>

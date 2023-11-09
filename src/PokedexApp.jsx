@@ -6,6 +6,7 @@ import {PokemonList} from "./views/PokemonList.jsx";
 import {PokemonDetails} from "./views/PokemonDetails.jsx";
 import {PokemonProvider} from "./context/PokemonProvider.jsx";
 import {Footer} from "./components/Footer.jsx";
+import {PageNotFound} from "./views/PageNotFound.jsx";
 
 export const PokedexApp = () => {
 
@@ -19,6 +20,7 @@ export const PokedexApp = () => {
               <Route path="/" element={<Home/>}/>
               <Route path="/pokemons" element={<PokemonList/>}/>
               <Route path="/pokemons/:pokemonName" element={<PokemonDetails/>}/>
+              <Route path="*" element={<PageNotFound/>}/>
             </Routes>
           </Container>
           <Footer />

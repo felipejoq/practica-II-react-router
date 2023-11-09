@@ -13,7 +13,7 @@ export const Home = () => {
           más recientes.</p>
         <Link className="btn btn-success" to="/pokemons">
           <div className="d-flex gap-2 ">
-            ¡Ir a los Pokemons!
+            <i className="bi bi-briefcase"></i> ¡Ir a los Pokemons!
           </div>
         </Link>
       </main>

@@ -1,7 +1,12 @@
 # 🚀 "Pokedex" - React Router Práctica
 
 Esta práctica de React con React Router busca comprender y reforzar conocimientos con el uso de algunos hooks propios
-de la librería "react router" tales como useParams y useNavigation. Todo el desafío queda expresado en este [Archivo PDF](https://github.com/felipejoq/practica-II-react-router/blob/main/01_desafio_pokemon_react_router_II.pdf?raw=true)
+de la librería "react router" tales como useParams y useNavigation.
+
+Todo el desafío queda expresado en
+este [Archivo PDF](https://github.com/felipejoq/practica-II-react-router/blob/main/01_desafio_pokemon_react_router_II.pdf?raw=true)
+
+También se hace uso de algunos componentes de React Router como NavLink o Link para generar una navegación dinámica.
 
 👉 [Live demo](https://pokedex-react-router.netlify.app/) ✨
 

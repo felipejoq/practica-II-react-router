@@ -24,7 +24,7 @@ export const Header = () => {
               }
               to="/"
             >
-              Home
+              <i className="bi bi-house-door"></i> Home
             </NavLink>
             <NavLink
               className={({isActive}) =>
@@ -32,7 +32,7 @@ export const Header = () => {
               }
               to="/pokemons"
             >
-              Pokemons
+              <i className="bi bi-briefcase"></i> Pokemons
             </NavLink>
           </Nav>
         </Navbar.Collapse>

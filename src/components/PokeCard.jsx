@@ -5,12 +5,6 @@ import {useNavigate} from "react-router-dom";
 
 export const PokeCard = ({pokemon}) => {
 
-  const navigate = useNavigate();
-
-  const goBack = () => {
-    navigate('/pokemons', {relative: "route"})
-  }
-
   return (
     <>
       <Row>
@@ -52,15 +46,6 @@ export const PokeCard = ({pokemon}) => {
                 </ListGroup.Item>
               </ListGroup>
             </Card.Body>
-            <Card.Footer>
-              <Button
-                onClick={goBack}
-                variant="primary"
-                className="w-100"
-              >
-                Volver atrás
-              </Button>
-            </Card.Footer>
           </Card>
         </Col>
       </Row>
