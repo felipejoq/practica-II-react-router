@@ -1,4 +1,4 @@
-import {Alert, Badge} from "react-bootstrap";
+import {Alert} from "react-bootstrap";
 
 export const InfoMessage = ({message = "Error genérico", color = "primary"}) => {
   return (
