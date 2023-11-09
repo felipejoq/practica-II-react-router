@@ -1,7 +1,6 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import {Badge, Button, Col, Row} from "react-bootstrap";
-import {useNavigate} from "react-router-dom";
+import {Badge, Col, Row} from "react-bootstrap";
 
 export const PokeCard = ({pokemon}) => {
 
