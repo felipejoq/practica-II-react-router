@@ -8,7 +8,7 @@ const NO_ACT_CLASS = "nav-item nav-link item-link";
 
 export const Header = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary shadow-sm z-2">
+    <Navbar expand="lg" className="bg-body-tertiary shadow-sm z-1">
       <Container>
         <Navbar.Brand>
           <Link to="/" className="d-flex align-items-center gap-2 text-decoration-none text-bg-dark p-2 rounded brand">

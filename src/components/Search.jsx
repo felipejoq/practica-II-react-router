@@ -1,16 +1,21 @@
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {PokemonContext} from "../context/PokemonContext.js";
 import {useNavigate} from "react-router-dom";
-import {SERVICE_URL} from "../helpers/constants.js";
 
 export const Search = () => {
 
   const {pokemonList} = useContext(PokemonContext);
   const navigate = useNavigate();
+  const [searchString, setSearchString] = useState("")
+
+  const handleOnSearch = (string) => {
+    setSearchString(string);
+  };
 
   const handleOnSelect = (pokemon) => {
     navigate(`/pokemons/${pokemon.name}`)
+    setSearchString("");
   }
 
   const formatResult = (pokemonList) => {
@@ -29,6 +34,9 @@ export const Search = () => {
         autoFocus
         placeholder="Buscar pokemon..."
         formatResult={formatResult}
+        inputSearchString={searchString}
+        onSearch={handleOnSearch}
+        styling={{ zIndex: 4 }}
       />
     </div>
   );
