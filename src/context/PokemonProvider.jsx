@@ -1,5 +1,5 @@
 import {PokemonContext} from "./PokemonContext.js";
-import {getPokemonByPage, navigatePokemonPerPage} from "../services/pokemon.js";
+import {getAllPokemonNames, getPokemonByPage, navigatePokemonPerPage} from "../services/pokemon.js";
 import {LIMIT, OFFSET} from "../helpers/constants.js";
 import {useEffect, useState} from "react";
 import useCounter from "../hooks/useCounter.js";
@@ -12,6 +12,7 @@ export const PokemonProvider = ({children}) => {
 
   const {counter, addValue, subValue, resetValue} = useCounter(parseInt(searchParams.get("offset")) || OFFSET);
   const [pokemons, setPokemons] = useState([]);
+  const [pokemonList, setPokemonList] = useState([])
   const [isLoading, setIsLoading] = useState(false);
 
   const getPokemonPerPage = async () => {
@@ -25,8 +26,23 @@ export const PokemonProvider = ({children}) => {
       setPokemons(pokemons)
       setIsLoading(false)
     })
-    setParams({ offset: counter, limit: LIMIT})
+    setParams({offset: counter, limit: LIMIT})
   }, [counter]);
+
+  useEffect(() => {
+    setIsLoading(true)
+    getAllPokemonNames().then(({results}) => {
+      results = results.map(item => {
+        return {
+          ...item,
+          id: crypto.randomUUID()
+        }
+      })
+      setPokemonList(results);
+      setIsLoading(false)
+    })
+      .catch(error => console.log(error))
+  }, []);
 
 
   return (
@@ -36,6 +52,7 @@ export const PokemonProvider = ({children}) => {
       params,
       setParams,
       setSearchParams,
+      pokemonList,
       resetValue,
       addValue,
       subValue
